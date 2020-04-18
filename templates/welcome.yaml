@@ -6,14 +6,10 @@ spec:
     inputs:
       parameters:
       - name: command
-        value: ./main-script.sh
+        value: ./welcome
+      - name: docker-image
+        default: welcome-cobol
       artifacts:
-      - name: main-script
-        path: /app/main-script.sh
-        raw:
-          data: |
-            cobc -x --free -o welcome /app/resources/welcome/src/welcome.cbl
-            ./welcome
     outputs:
       artifacts:
       - name: welcome
